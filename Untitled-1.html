@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Historia de Boca Juniors en la Copa Libertadores 2007.">
+
     <title>Boca Juniors | La historia de la Libertadores</title>
 
     <!-- Bootstrap 5 -->
@@ -14,6 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
     <style>
+
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 85px;
@@ -22,7 +24,7 @@
         body {
             background-color: #071b55;
             font-family: Arial, sans-serif;
-            color: #ffffff;
+            color: white;
             margin: 0;
         }
 
@@ -58,8 +60,45 @@
             color: var(--dorado);
         }
 
-        .navbar-toggler {
-            border-color: var(--dorado);
+        /* BOTÓN HAMBURGUESA */
+
+        .boton-hamburguesa {
+            border: 2px solid var(--dorado);
+            border-radius: 10px;
+            padding: 8px 12px;
+            transition: 0.3s;
+        }
+
+        .boton-hamburguesa:hover {
+            background-color: var(--dorado);
+        }
+
+        .boton-hamburguesa:focus {
+            box-shadow: 0 0 8px var(--dorado);
+        }
+
+        /* MENÚ DESPLEGABLE */
+
+        @media (max-width: 991px) {
+
+            .navbar-collapse {
+                background-color: var(--azul-oscuro);
+                padding: 15px;
+                margin-top: 12px;
+                border: 1px solid var(--dorado);
+                border-radius: 12px;
+            }
+
+            .navbar-nav .nav-link {
+                padding: 12px;
+                border-bottom: 1px solid rgba(255, 204, 0, 0.2);
+                margin-left: 0;
+            }
+
+            .navbar-nav .nav-link:last-child {
+                border-bottom: none;
+            }
+
         }
 
         /* PORTADA */
@@ -71,10 +110,14 @@
             justify-content: center;
             text-align: center;
             padding: 80px 20px;
+
             background:
-                linear-gradient(rgba(3, 13, 48, 0.78),
-                rgba(3, 13, 48, 0.88)),
+                linear-gradient(
+                    rgba(3, 13, 48, 0.78),
+                    rgba(3, 13, 48, 0.88)
+                ),
                 url("img/boca1.jpg") center/cover no-repeat;
+
             border-bottom: 4px solid var(--dorado);
         }
 
@@ -183,6 +226,46 @@
             margin: 20px auto;
         }
 
+        /* FORMACION EN LA CANCHA */
+
+        .cancha {
+            max-width: 650px;
+            margin: 25px auto;
+            padding: 30px 15px;
+
+            background: repeating-linear-gradient(
+                0deg,
+                #795024,
+                #795024 65px,
+                #91632e 65px,
+                #91632e 130px
+            );
+
+            border: 3px solid white;
+            border-radius: 12px;
+            outline: 2px solid var(--dorado);
+        }
+
+        .fila-jugadores {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .jugador {
+            background-color: var(--azul-oscuro);
+            color: var(--dorado);
+            font-weight: bold;
+            padding: 8px 12px;
+            border: 1px solid var(--dorado);
+            border-radius: 6px;
+            text-align: center;
+            min-width: 75px;
+            font-size: 0.85rem;
+        }
+
         /* TABLA */
 
         .tabla-contenedor {
@@ -206,7 +289,7 @@
 
         .tabla-resultados tbody td {
             background-color: #102b70;
-            color: rgb(221, 201, 27);
+            color: white;
             text-align: center;
             padding: 13px;
             vertical-align: middle;
@@ -254,7 +337,7 @@
         }
 
         .contacto-box p {
-            color: rgb(219, 216, 13);
+            color: white;
             font-size: 1.1rem;
         }
 
@@ -268,7 +351,7 @@
         }
 
         footer p {
-            color: rgb(221, 217, 13);
+            color: white;
             margin: 5px;
         }
 
@@ -280,6 +363,7 @@
         /* RESPONSIVE */
 
         @media (max-width: 768px) {
+
             .hero {
                 min-height: 380px;
             }
@@ -303,7 +387,27 @@
             .contacto-box {
                 padding: 22px;
             }
+
         }
+
+        @media (max-width: 480px) {
+
+            .jugador {
+                min-width: 0;
+                padding: 7px 8px;
+                font-size: 0.72rem;
+            }
+
+            .fila-jugadores {
+                gap: 5px;
+            }
+
+            .cancha {
+                padding: 20px 8px;
+            }
+
+        }
+
     </style>
 </head>
 
@@ -312,13 +416,17 @@
     <!-- MENÚ DE NAVEGACIÓN -->
 
     <nav class="navbar navbar-expand-lg navbar-dark navbar-boca sticky-top">
+
         <div class="container">
 
             <a class="navbar-brand" href="#inicio">
                 <i class="bi bi-star-fill"></i> BOCA JUNIORS
             </a>
 
-            <button class="navbar-toggler" type="button"
+            <!-- BOTÓN HAMBURGUESA -->
+
+            <button class="navbar-toggler boton-hamburguesa"
+                    type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#menu"
                     aria-controls="menu"
@@ -326,7 +434,10 @@
                     aria-label="Abrir menú">
 
                 <span class="navbar-toggler-icon"></span>
+
             </button>
+
+            <!-- ENLACES DEL MENÚ -->
 
             <div class="collapse navbar-collapse" id="menu">
 
@@ -355,7 +466,9 @@
                 </ul>
 
             </div>
+
         </div>
+
     </nav>
 
 
@@ -404,11 +517,13 @@
                     </p>
 
                     <p class="texto">
-                        El plantel contaba con grandes figuras como
-                        Juan Román Riquelme, Martín Palermo,
-                        Rodrigo Palacio, Hugo Ibarra, Mauricio Caranta,
-                        Daniel Díaz, Clemente Rodríguez, Ever Banega,
-                        Neri Cardozo y Pablo Ledesma.
+                        El plantel contaba con: Mauricio Caranta, Aldo Bobadilla y Pablo Migliore como opciones en el arco.
+                    <p class="texto">
+                        Hugo Ibarra, Daniel "Cata" Díaz, Claudio Morel Rodríguez, Clemente Rodríguez, Matías Silvestre, Jonatan Maidana, Matías Cahais y Santiago Villafañe como candidatos en la defensa.
+                    </p>
+                        
+                        Juan Román Riquelme (goleador del equipo con 8 tantos y figura del torneo), Pablo Ledesma, Éver Banega, Neri Cardozo, Sebastián Battaglia, Jesús Dátolo y Sergio Orteman siendo candidatos en el mediocampo y rotando.
+                        y en el ataque estaban Martín Palermo, Rodrigo Palacio y Mauro Boselli como unicas opciones de 9.
                     </p>
 
                 </div>
@@ -424,35 +539,83 @@
             </div>
 
 
+            <!-- FORMACION DE BOCA VS GREMIO -->
+
             <h3 class="subtitulo text-center mt-5">
-                ¿Cómo formaba Boca en la final?
+                Formación de Boca vs. Grêmio
             </h3>
 
-            <div class="card-boca">
+            <div class="cancha">
 
-                <p class="texto text-center">
-                    <strong>Formación de Boca Juniors frente a Grêmio:</strong>
-                </p>
+                <!-- DELANTEROS -->
 
-                <p class="texto text-center">
-                    Mauricio Caranta; Hugo Ibarra, Daniel Díaz,
-                    Claudio Morel Rodríguez, Clemente Rodríguez;
-                    Pablo Ledesma, Ever Banega, Neri Cardozo;
-                    Juan Román Riquelme; Rodrigo Palacio y Martín Palermo.
-                </p>
+                <div class="fila-jugadores">
 
-                <p class="text-center mb-0">
-                    <span class="resultado">
-                        Director técnico: Miguel Ángel Russo
-                    </span>
-                </p>
+                    <div class="jugador">Palacio</div>
+
+                    <div class="jugador">Palermo</div>
+
+                </div>
+
+
+                <!-- MEDIOCAMPISTAS -->
+
+                <div class="fila-jugadores">
+
+                    <div class="jugador">Cardozo</div>
+
+                    <div class="jugador">Riquelme</div>
+
+                    <div class="jugador">Ledesma</div>
+
+                </div>
+
+
+                <!-- VOLANTE CENTRAL -->
+
+                <div class="fila-jugadores">
+
+                    <div class="jugador">Banega</div>
+
+                </div>
+
+
+                <!-- DEFENSORES -->
+
+                <div class="fila-jugadores">
+
+                    <div class="jugador">Rodríguez</div>
+
+                    <div class="jugador">Morel</div>
+
+                    <div class="jugador">Díaz</div>
+
+                    <div class="jugador">Ibarra</div>
+
+                </div>
+
+
+                <!-- ARQUERO -->
+
+                <div class="fila-jugadores">
+
+                    <div class="jugador">Caranta</div>
+
+                </div>
 
             </div>
+
+
+            <p class="text-center">
+                <span class="resultado">
+                    Director técnico: Miguel Ángel Russo
+                </span>
+            </p>
 
         </section>
 
 
-        <!-- DATOS HISTÓRICOS -->
+        <!-- HISTORIA Y RESULTADOS -->
 
         <section id="nosotros">
 
@@ -528,11 +691,13 @@
                 <table class="table table-bordered tabla-resultados">
 
                     <thead>
+
                         <tr>
                             <th>Instancia</th>
                             <th>Partido</th>
                             <th>Resultado</th>
                         </tr>
+
                     </thead>
 
                     <tbody>
@@ -637,7 +802,7 @@
                 </div>
 
 
-                <!-- IMÁGENES -->
+                <!-- IMAGENES -->
 
                 <div class="carousel-inner">
 
@@ -738,7 +903,9 @@
                 </p>
 
                 <p class="mb-0">
-                    <strong>¡Siempre habrá una nueva historia para contar!</strong>
+                    <strong>
+                        ¡Siempre habrá una nueva historia para contar!
+                    </strong>
                 </p>
 
             </div>
@@ -773,20 +940,34 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+
+    <!-- JAVASCRIPT DEL MENÚ -->
+
     <script>
-        // Cerrar el menú automáticamente al seleccionar una sección
-        const enlaces = document.querySelectorAll('.navbar-nav .nav-link');
+
+        // Cerrar el menú al seleccionar una sección
+
+        const enlaces = document.querySelectorAll(
+            '.navbar-nav .nav-link'
+        );
+
         const menu = document.getElementById('menu');
 
         enlaces.forEach(function(enlace) {
+
             enlace.addEventListener('click', function() {
-                const menuAbierto = bootstrap.Collapse.getInstance(menu);
+
+                const menuAbierto =
+                    bootstrap.Collapse.getInstance(menu);
 
                 if (menuAbierto && window.innerWidth < 992) {
                     menuAbierto.hide();
                 }
+
             });
+
         });
+
     </script>
 
 </body>
