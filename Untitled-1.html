@@ -1,0 +1,793 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Historia de Boca Juniors en la Copa Libertadores 2007.">
+    <title>Boca Juniors | La historia de la Libertadores</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            background-color: #071b55;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        :root {
+            --azul: #071b55;
+            --azul-oscuro: #041039;
+            --azul-claro: #123b91;
+            --dorado: #ffcc00;
+        }
+
+        /* MENÚ */
+
+        .navbar-boca {
+            background-color: var(--azul-oscuro);
+            border-bottom: 3px solid var(--dorado);
+        }
+
+        .navbar-brand {
+            color: var(--dorado) !important;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .navbar-boca .nav-link {
+            color: white;
+            font-weight: bold;
+            margin-left: 12px;
+            transition: 0.3s;
+        }
+
+        .navbar-boca .nav-link:hover,
+        .navbar-boca .nav-link.active {
+            color: var(--dorado);
+        }
+
+        .navbar-toggler {
+            border-color: var(--dorado);
+        }
+
+        /* PORTADA */
+
+        .hero {
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            background:
+                linear-gradient(rgba(3, 13, 48, 0.78),
+                rgba(3, 13, 48, 0.88)),
+                url("img/boca1.jpg") center/cover no-repeat;
+            border-bottom: 4px solid var(--dorado);
+        }
+
+        .hero h1 {
+            color: var(--dorado);
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            text-shadow: 2px 3px 8px black;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 15px;
+        }
+
+        .btn-boca {
+            background-color: var(--dorado);
+            color: var(--azul-oscuro);
+            font-weight: bold;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .btn-boca:hover {
+            background-color: white;
+            color: var(--azul);
+            transform: translateY(-3px);
+        }
+
+        /* SECCIONES */
+
+        section {
+            padding: 75px 15px;
+        }
+
+        .titulo-seccion {
+            color: var(--dorado);
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .subtitulo {
+            color: var(--dorado);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .texto {
+            color: #eeeeee;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* TARJETAS */
+
+        .card-boca {
+            background-color: #102b70;
+            border: 1px solid rgba(255, 204, 0, 0.4);
+            border-radius: 15px;
+            padding: 25px;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .card-boca:hover {
+            transform: translateY(-6px);
+            border-color: var(--dorado);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-boca h3 {
+            color: var(--dorado);
+            font-size: 1.3rem;
+        }
+
+        .card-boca p {
+            color: #eeeeee;
+            line-height: 1.7;
+        }
+
+        .icono {
+            color: var(--dorado);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* IMÁGENES */
+
+        .imagen-historia {
+            width: 100%;
+            max-width: 450px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 3px solid var(--dorado);
+            display: block;
+            margin: 20px auto;
+        }
+
+        /* TABLA */
+
+        .tabla-contenedor {
+            max-width: 950px;
+            margin: auto;
+            overflow-x: auto;
+            border-radius: 12px;
+        }
+
+        .tabla-resultados {
+            margin-bottom: 0;
+            min-width: 650px;
+        }
+
+        .tabla-resultados thead th {
+            background-color: var(--dorado);
+            color: var(--azul-oscuro);
+            text-align: center;
+            padding: 15px;
+        }
+
+        .tabla-resultados tbody td {
+            background-color: #102b70;
+            color: white;
+            text-align: center;
+            padding: 13px;
+            vertical-align: middle;
+        }
+
+        .tabla-resultados tbody tr:hover td {
+            background-color: #19408e;
+        }
+
+        .resultado {
+            color: var(--dorado);
+            font-weight: bold;
+        }
+
+        /* GALERÍA */
+
+        .carousel {
+            max-width: 900px;
+            margin: auto;
+            border: 3px solid var(--dorado);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .carousel-item img {
+            height: 450px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.65);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        /* CONTACTO */
+
+        .contacto-box {
+            background-color: #102b70;
+            border: 2px solid var(--dorado);
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+        }
+
+        .contacto-box p {
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        /* PIE DE PÁGINA */
+
+        footer {
+            background-color: var(--azul-oscuro);
+            border-top: 3px solid var(--dorado);
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer p {
+            color: white;
+            margin: 5px;
+        }
+
+        footer span {
+            color: var(--dorado);
+            font-weight: bold;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 380px;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 55px 12px;
+            }
+
+            .carousel-item img {
+                height: 280px;
+            }
+
+            .texto {
+                text-align: left;
+            }
+
+            .contacto-box {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-boca sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="#inicio">
+                <i class="bi bi-star-fill"></i> BOCA JUNIORS
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu"
+                    aria-controls="menu"
+                    aria-expanded="false"
+                    aria-label="Abrir menú">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#inicio">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#jugadores">Jugadores</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosotros">Historia</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeria">Galería</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- PORTADA PRINCIPAL -->
+
+    <header class="hero" id="inicio">
+
+        <div class="container">
+
+            <h1>Historia de Boca Juniors</h1>
+
+            <p>La conquista de América: Copa Libertadores 2007</p>
+
+            <a href="#nosotros" class="btn-boca">
+                Conocer la historia
+                <i class="bi bi-arrow-down-circle"></i>
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+
+        <!-- HISTORIA Y JUGADORES -->
+
+        <section id="jugadores">
+
+            <h2 class="titulo-seccion">
+                <i class="bi bi-trophy-fill"></i>
+                Un equipo inolvidable
+            </h2>
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-6">
+
+                    <p class="texto">
+                        Boca Juniors conquistó su sexta Copa Libertadores
+                        en el año 2007. Bajo la dirección técnica de
+                        Miguel Ángel Russo, el equipo tuvo una campaña
+                        extraordinaria y consiguió uno de los títulos
+                        internacionales más recordados de su historia.
+                    </p>
+
+                    <p class="texto">
+                        El plantel contaba con grandes figuras como
+                        Juan Román Riquelme, Martín Palermo,
+                        Rodrigo Palacio, Hugo Ibarra, Mauricio Caranta,
+                        Daniel Díaz, Clemente Rodríguez, Ever Banega,
+                        Neri Cardozo y Pablo Ledesma.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <img src="img/imagen1.jpg"
+                         class="imagen-historia"
+                         alt="Equipo de Boca Juniors en 2007">
+
+                </div>
+
+            </div>
+
+
+            <h3 class="subtitulo text-center mt-5">
+                ¿Cómo formaba Boca en la final?
+            </h3>
+
+            <div class="card-boca">
+
+                <p class="texto text-center">
+                    <strong>Formación de Boca Juniors frente a Grêmio:</strong>
+                </p>
+
+                <p class="texto text-center">
+                    Mauricio Caranta; Hugo Ibarra, Daniel Díaz,
+                    Claudio Morel Rodríguez, Clemente Rodríguez;
+                    Pablo Ledesma, Ever Banega, Neri Cardozo;
+                    Juan Román Riquelme; Rodrigo Palacio y Martín Palermo.
+                </p>
+
+                <p class="text-center mb-0">
+                    <span class="resultado">
+                        Director técnico: Miguel Ángel Russo
+                    </span>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DATOS HISTÓRICOS -->
+
+        <section id="nosotros">
+
+            <h2 class="titulo-seccion">
+                <i class="bi bi-award-fill"></i>
+                El camino hacia la sexta
+            </h2>
+
+            <div class="row g-4 mb-5">
+
+                <div class="col-md-4">
+
+                    <div class="card-boca text-center">
+
+                        <i class="bi bi-trophy icono"></i>
+
+                        <h3>6 Libertadores</h3>
+
+                        <p>
+                            Boca consiguió su sexta Copa Libertadores
+                            en el año 2007.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="card-boca text-center">
+
+                        <i class="bi bi-star-fill icono"></i>
+
+                        <h3>Juan Román Riquelme</h3>
+
+                        <p>
+                            Fue una de las grandes figuras del equipo
+                            y protagonista de la final.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="card-boca text-center">
+
+                        <i class="bi bi-globe-americas icono"></i>
+
+                        <h3>Campeón de América</h3>
+
+                        <p>
+                            Boca venció a Grêmio en la final
+                            y se consagró campeón continental.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABLA DE RESULTADOS -->
+
+            <h3 class="subtitulo text-center">
+                Resultados de la Copa Libertadores 2007
+            </h3>
+
+            <div class="tabla-contenedor">
+
+                <table class="table table-bordered tabla-resultados">
+
+                    <thead>
+                        <tr>
+                            <th>Instancia</th>
+                            <th>Partido</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Octavos de final</td>
+                            <td>Boca vs. Vélez</td>
+                            <td class="resultado">3 - 0</td>
+                        </tr>
+
+                        <tr>
+                            <td>Octavos de final</td>
+                            <td>Vélez vs. Boca</td>
+                            <td class="resultado">3 - 1</td>
+                        </tr>
+
+                        <tr>
+                            <td>Cuartos de final</td>
+                            <td>Boca vs. Libertad</td>
+                            <td class="resultado">1 - 1</td>
+                        </tr>
+
+                        <tr>
+                            <td>Cuartos de final</td>
+                            <td>Libertad vs. Boca</td>
+                            <td class="resultado">0 - 2</td>
+                        </tr>
+
+                        <tr>
+                            <td>Semifinal</td>
+                            <td>Cúcuta Deportivo vs. Boca</td>
+                            <td class="resultado">3 - 1</td>
+                        </tr>
+
+                        <tr>
+                            <td>Semifinal</td>
+                            <td>Boca vs. Cúcuta Deportivo</td>
+                            <td class="resultado">3 - 0</td>
+                        </tr>
+
+                        <tr>
+                            <td>Final</td>
+                            <td>Boca vs. Grêmio</td>
+                            <td class="resultado">3 - 0</td>
+                        </tr>
+
+                        <tr>
+                            <td>Final</td>
+                            <td>Grêmio vs. Boca</td>
+                            <td class="resultado">0 - 2</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <p class="text-center mt-3">
+                <span class="resultado">
+                    Resultado global de la final: Boca 5 - 0 Grêmio.
+                </span>
+            </p>
+
+        </section>
+
+
+        <!-- GALERÍA -->
+
+        <section id="galeria">
+
+            <h2 class="titulo-seccion">
+                <i class="bi bi-images"></i>
+                Galería Xeneize
+            </h2>
+
+            <div id="slide2"
+                 class="carousel slide"
+                 data-bs-ride="carousel">
+
+                <!-- INDICADORES -->
+
+                <div class="carousel-indicators">
+
+                    <button type="button"
+                            data-bs-target="#slide2"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Imagen 1"></button>
+
+                    <button type="button"
+                            data-bs-target="#slide2"
+                            data-bs-slide-to="1"
+                            aria-label="Imagen 2"></button>
+
+                    <button type="button"
+                            data-bs-target="#slide2"
+                            data-bs-slide-to="2"
+                            aria-label="Imagen 3"></button>
+
+                </div>
+
+
+                <!-- IMÁGENES -->
+
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active"
+                         data-bs-interval="3000">
+
+                        <img src="img/boca1.jpg"
+                             class="d-block w-100"
+                             alt="Boca Juniors">
+
+                        <div class="carousel-caption">
+                            <h5>Pasión Xeneize</h5>
+                        </div>
+
+                    </div>
+
+                    <div class="carousel-item"
+                         data-bs-interval="3000">
+
+                        <img src="img/boca2.jpg"
+                             class="d-block w-100"
+                             alt="Historia de Boca Juniors">
+
+                        <div class="carousel-caption">
+                            <h5>La historia continúa</h5>
+                        </div>
+
+                    </div>
+
+                    <div class="carousel-item"
+                         data-bs-interval="3000">
+
+                        <img src="img/boca3.jpg"
+                             class="d-block w-100"
+                             alt="Copa Libertadores 2007">
+
+                        <div class="carousel-caption">
+                            <h5>Campeones de América 2007</h5>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BOTÓN ANTERIOR -->
+
+                <button class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#slide2"
+                        data-bs-slide="prev">
+
+                    <span class="carousel-control-prev-icon"
+                          aria-hidden="true"></span>
+
+                    <span class="visually-hidden">Anterior</span>
+
+                </button>
+
+
+                <!-- BOTÓN SIGUIENTE -->
+
+                <button class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#slide2"
+                        data-bs-slide="next">
+
+                    <span class="carousel-control-next-icon"
+                          aria-hidden="true"></span>
+
+                    <span class="visually-hidden">Siguiente</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACTO -->
+
+        <section id="contacto">
+
+            <h2 class="titulo-seccion">
+                <i class="bi bi-chat-dots-fill"></i>
+                Contacto
+            </h2>
+
+            <div class="contacto-box">
+
+                <h3 class="subtitulo">
+                    ¡La historia Xeneize nunca termina!
+                </h3>
+
+                <p>
+                    ¿Querés sumar más momentos históricos,
+                    jugadores o títulos de Boca Juniors?
+                </p>
+
+                <p class="mb-0">
+                    <strong>¡Siempre habrá una nueva historia para contar!</strong>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <p>
+            <i class="bi bi-star-fill"></i>
+            <span>Boca Juniors</span>
+            <i class="bi bi-star-fill"></i>
+        </p>
+
+        <p>
+            Historia, pasión y gloria.
+        </p>
+
+        <p class="small">
+            © 2026 - Página dedicada a la historia de Boca Juniors.
+        </p>
+
+    </footer>
+
+
+    <!-- BOOTSTRAP JAVASCRIPT -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Cerrar el menú automáticamente al seleccionar una sección
+        const enlaces = document.querySelectorAll('.navbar-nav .nav-link');
+        const menu = document.getElementById('menu');
+
+        enlaces.forEach(function(enlace) {
+            enlace.addEventListener('click', function() {
+                const menuAbierto = bootstrap.Collapse.getInstance(menu);
+
+                if (menuAbierto && window.innerWidth < 992) {
+                    menuAbierto.hide();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
