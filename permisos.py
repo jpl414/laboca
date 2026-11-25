@@ -9,18 +9,6 @@ cursor = conexion.cursor()
 
 # Crear tabla si no existe
 cursor.execute("""
-CREATE TABLE IF NOT EXISTS usuario(
-    dni INTEGER PRIMARY KEY,import sqlite3
-
-# =========================================================
-# CONEXIÓN A LA BASE DE DATOS
-# =========================================================
-
-conexion = sqlite3.connect("seguridad.db")
-cursor = conexion.cursor()
-
-# Crear tabla si no existe
-cursor.execute("""
     CREATE TABLE IF NOT EXISTS usuario(
     dni INTEGER PRIMARY KEY,
     nombre TEXT NOT NULL,
